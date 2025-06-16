@@ -4,238 +4,238 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flicks_Focused: Community Photography Project - Supreet Sudharshana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Body Styles - Light background, serif font for main text */
+        /* Base Styles - Dark Gradient Background, Light Text */
         body {
-            font-family: 'Georgia', serif; /* Classic serif font for body */
+            font-family: 'Open Sans', sans-serif; /* Clean sans-serif for body text */
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8; /* Very light grey/off-white background */
-            color: #333; /* Standard dark grey text */
-            line-height: 1.6; /* Improved readability */
+            background: linear-gradient(to bottom, #0f1c2d, #03080f); /* Dark blue to very dark blue/black gradient */
+            color: #E0E0E0; /* Light grey text for readability */
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
 
-        /* Explicitly ensure strong tags are bold */
         strong {
-            font-weight: bold !important; /* Added to ensure bolding always applies */
+            font-weight: 600; /* Use Open Sans semi-bold for strong */
         }
 
-        /* Header Styles - Clean, minimalist, no background color */
+        /* Header Styles - Dark, slightly transparent */
         header {
-            background-color: #ffffff; /* White background for the very top */
+            background-color: #0d1726; /* Darker blue for header */
             padding: 1em 0;
             text-align: center;
-            border-bottom: 1px solid #eee; /* Subtle separator from navigation */
-            position: relative; /* For logo positioning */
+            border-bottom: 1px solid #1a2a3a; /* Subtle separator */
+            position: relative;
         }
         header .logo {
-            font-family: 'Arial', sans-serif; /* Using a sans-serif for a logo feel */
-            font-size: 2.5em; /* Larger logo text */
-            font-weight: bold;
-            color: #333;
+            font-family: 'Montserrat', sans-serif; /* Bold sans-serif for logo */
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #FFFFFF; /* White logo text */
             margin-bottom: 0.2em;
-            text-decoration: none; /* In case it's a link */
-            display: block; /* Ensures it takes full width for centering */
+            text-decoration: none;
+            display: block;
         }
         header .tagline {
             font-size: 0.9em;
-            color: #555;
+            color: #ADD8E6; /* Light blue tagline */
             margin-top: 0;
         }
 
-        /* Navigation Bar Styles - Clean sans-serif, uppercase */
+        /* Navigation Bar Styles - Dark, Light Links */
         nav {
-            background-color: #ffffff; /* White background */
+            background-color: #0d1726; /* Same as header for consistency */
             padding: 0.8em 0;
             text-align: center;
-            border-bottom: 1px solid #ddd; /* Subtle line below nav */
+            border-bottom: 1px solid #1a2a3a; /* Subtle line below nav */
         }
         nav a {
-            font-family: 'Arial', sans-serif; /* Sans-serif for navigation */
-            color: #333; /* Dark text for nav links */
+            font-family: 'Montserrat', sans-serif; /* Sans-serif for navigation */
+            color: #ADD8E6; /* Light blue links */
             text-decoration: none;
             padding: 0.8em 1.5em;
             display: inline-block;
-            text-transform: uppercase; /* Uppercase like the example */
+            text-transform: uppercase;
             font-size: 0.9em;
             letter-spacing: 0.05em;
+            transition: color 0.3s ease, background-color 0.3s ease;
         }
         nav a:hover {
-            color: #000; /* Darker on hover */
-            background-color: #f0f0f0; /* Subtle hover background */
+            color: #FFFFFF; /* White on hover */
+            background-color: #1e2f42; /* Slightly lighter dark blue on hover */
         }
 
-        /* Main Content Container Styles - Centered, fixed width, ample padding */
+        /* Main Content Container Styles - Distinct Darker Background */
         .container {
             width: 85%;
-            max-width: 900px; /* Constrained width like the resume/tutoring site */
-            margin: 2em auto; /* Centered with vertical spacing */
-            background-color: #ffffff; /* White background for content boxes */
-            padding: 2.5em 3.5em; /* Generous padding inside containers */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Very subtle shadow */
-            border-radius: 4px; /* Slightly rounded corners */
+            max-width: 900px;
+            margin: 2em auto;
+            background-color: #1e2f42; /* Medium dark blue for containers */
+            padding: 2.5em 3.5em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* More prominent shadow for dark theme */
+            border-radius: 8px; /* Slightly more rounded corners */
         }
 
-        /* Heading Styles - Serif for main headings, sans-serif for sub-headings within sections */
+        /* Heading Styles - White for contrast */
         h1, h2, h3 {
-            font-family: 'Georgia', serif; /* Main headings use serif */
-            color: #222; /* Darker headings */
-            text-align: center; /* Center main headings */
+            font-family: 'Montserrat', sans-serif; /* Bold sans-serif for headings */
+            color: #FFFFFF; /* White headings */
+            text-align: center;
             margin-bottom: 1em;
-            font-weight: bold;
+            font-weight: 700;
         }
-        h1 { font-size: 2.5em; margin-bottom: 0.2em; }
-        h2 { font-size: 2em; margin-top: 1.5em; }
-        h3 { font-size: 1.5em; margin-top: 1.2em; }
+        h1 { font-size: 2.8em; margin-bottom: 0.2em; }
+        h2 { font-size: 2.2em; margin-top: 1.5em; }
+        h3 { font-size: 1.6em; margin-top: 1.2em; }
 
-        .section-subtitle { /* For sub-heading like "Committed to Excellence" */
-            font-family: 'Georgia', serif;
-            font-size: 1.1em;
-            color: #555;
+        .section-subtitle {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.2em;
+            color: #ADD8E6; /* Light blue subtitle */
             text-align: center;
             margin-top: 0.5em;
-            margin-bottom: 2em; /* More space below hero subtitle */
+            margin-bottom: 2em;
             font-style: italic;
+            font-weight: 300;
         }
         
-        .container h2.section-heading-left { /* For "More About..." and "Services..." headings */
-            font-family: 'Arial', sans-serif; /* Sans-serif for section headings */
-            text-align: left; /* Aligned left like tutoring site */
+        .container h2.section-heading-left {
+            font-family: 'Montserrat', sans-serif;
+            text-align: left;
             font-size: 1.8em;
-            color: #444;
-            border-bottom: 1px solid #eee; /* Subtle underline */
+            color: #FFFFFF; /* White heading */
+            border-bottom: 1px solid #445566; /* Muted blue/grey underline */
             padding-bottom: 0.5em;
             margin-bottom: 1em;
         }
 
-        /* Hero Section Image - Large and central */
+        /* Hero Section Image - Removed as per request, just content */
         .hero-image-wrapper {
+            /* This wrapper is kept for structure but its image is removed */
             width: 100%;
-            max-width: 700px; /* Constrain hero image width */
-            margin: 2em auto; /* Center the image with vertical space */
+            max-width: 700px;
+            margin: 2em auto;
             text-align: center;
         }
         .hero-image {
-            width: 100%;
-            height: auto;
-            max-height: 400px; /* Max height for the hero image */
-            object-fit: cover;
-            border-radius: 4px; /* Match container border-radius */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* More prominent shadow for hero image */
+            /* Image is not used here */
+            display: none;
         }
 
-        /* Gallery Styles - Subtle grid for images, similar to sample */
+        /* Gallery/Portfolio Styles - Dark background, light images */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted grid for more images */
-            gap: 1.5em; /* Spacing between grid items */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5em;
             margin-top: 2em;
         }
         .gallery img {
             width: 100%;
-            height: 180px; /* Consistent height for gallery images */
+            height: 180px;
             object-fit: cover;
-            border-radius: 4px; /* Rounded corners */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow on images */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Stronger shadow for dark theme */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .gallery img:hover {
-            transform: scale(1.03); /* Slightly enlarge image on hover */
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* More prominent shadow on hover */
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
 
-
-        /* Service Table Styles - Clean, basic table */
+        /* Service Table Styles - Light lines on dark background */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 1.5em;
-            font-family: 'Arial', sans-serif; /* Sans-serif for table text */
+            font-family: 'Open Sans', sans-serif;
             font-size: 0.95em;
         }
         table, th, td {
-            border: 1px solid #e0e0e0; /* Light border */
+            border: 1px solid #445566; /* Muted blue/grey border */
         }
         th, td {
-            padding: 10px 15px; /* Ample padding */
+            padding: 10px 15px;
             text-align: left;
+            color: #E0E0E0; /* Light grey text */
         }
         th {
-            background-color: #f5f5f5; /* Light header for table */
-            color: #444;
-            font-weight: bold;
+            background-color: #2a3b4c; /* Slightly lighter dark blue for header */
+            color: #FFFFFF; /* White header text */
+            font-weight: 600;
         }
         tbody tr {
-            transition: background-color 0.3s ease; /* Smooth transition for hover */
+            transition: background-color 0.3s ease;
         }
         tbody tr:hover {
-            background-color: #f0f0f0; /* Subtle hover background for table rows */
+            background-color: #3e526b; /* Lighter dark blue on hover */
         }
-        tbody tr:nth-child(even) { /* Subtle stripe for rows */
-            background-color: #fcfcfc;
+        tbody tr:nth-child(even) {
+            background-color: #1a2a3a; /* Subtle stripe for rows */
         }
         .table-note {
             font-size: 0.9em;
-            color: #666;
+            color: #ADD8E6; /* Light blue note */
             margin-top: 1em;
             text-align: center;
         }
 
-        /* Button Styles (for general calls to action) */
-        .main-button { /* Reusing previous button style for email redirect */
-            background-color: #555; /* Neutral dark grey button */
+        /* Button Styles - Bright Blue with White Text */
+        .main-button {
+            background-color: #007bff; /* Bright blue button */
             color: white;
             padding: 12px 30px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px; /* Slightly more rounded */
             cursor: pointer;
             font-size: 1.1em;
             margin-top: 1.5em;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover */
-            display: inline-block; /* Changed to inline-block for centering */
-            text-decoration: none; /* Remove underline for links */
-            font-family: 'Arial', sans-serif; /* Sans-serif for button */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif; /* Sans-serif for button */
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-weight: 600;
         }
         .main-button:hover {
-            background-color: #333;
-            transform: translateY(-2px); /* Slight lift */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
-        /* Testimonial specific styles */
+        /* Testimonial specific styles - White text on subtle dark background */
         .testimonial-item {
-            background-color: #fefefe;
-            border-left: 5px solid #ccc;
+            background-color: #1a2a3a; /* Darker background for testimonials */
+            border-left: 5px solid #007bff; /* Bright blue border */
             padding: 1.5em;
             margin-bottom: 1.5em;
             font-style: italic;
-            color: #444;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            color: #E0E0E0; /* Light grey text */
+            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
             border-radius: 4px;
         }
         .testimonial-item p {
             margin: 0 0 0.5em 0;
         }
         .testimonial-author {
-            font-weight: bold;
+            font-weight: 600;
             font-style: normal;
-            color: #333;
+            color: #FFFFFF; /* White author name */
             text-align: right;
             margin-top: 0.5em;
             display: block;
         }
 
-
-        /* Form Labels (removed, but keeping style in case needed elsewhere) */
+        /* Form Labels & Inputs - Light text, light borders */
         form label {
             display: block;
             margin-bottom: 0.5em;
-            font-weight: bold;
-            font-family: 'Arial', sans-serif;
+            font-weight: 600;
+            font-family: 'Open Sans', sans-serif;
             font-size: 0.95em;
-            color: #444;
+            color: #FFFFFF; /* White labels */
         }
         form input[type="text"],
         form input[type="email"],
@@ -243,30 +243,32 @@
             width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 1em;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: 'Georgia', serif;
+            border: 1px solid #445566; /* Muted blue/grey border */
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
             font-size: 1em;
+            background-color: #2a3b4c; /* Slightly lighter dark blue for input fields */
+            color: #E0E0E0; /* Light grey input text */
         }
         form textarea {
             resize: vertical;
             min-height: 100px;
         }
 
-        /* List Styles */
+        /* List Styles - Light text with blue bullets */
         ul {
-            list-style: none; /* Remove default bullets */
+            list-style: none;
             padding: 0;
             margin: 1em 0;
         }
         ul li {
             margin-bottom: 0.5em;
-            padding-left: 1.5em; /* Space for custom bullet */
+            padding-left: 1.5em;
             position: relative;
         }
         ul li::before {
-            content: '•'; /* Custom bullet point */
-            color: #555; /* Color of the bullet */
+            content: '•';
+            color: #007bff; /* Bright blue bullet point */
             position: absolute;
             left: 0;
             top: 0;
@@ -274,24 +276,58 @@
             line-height: 1;
         }
         ul li a {
-            color: #333; /* Darker link color */
+            color: #ADD8E6; /* Light blue link color */
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
         }
         ul li a:hover {
             text-decoration: underline;
+            color: #FFFFFF; /* White on hover */
         }
 
-
-        /* Footer Styles */
+        /* Footer Styles - Dark Background, Light Text */
         footer {
             text-align: center;
             padding: 1.5em 0;
-            background-color: #efefef; /* Light grey footer */
-            color: #555;
+            background-color: #0d1726; /* Same as header for consistency */
+            color: #ADD8E6; /* Light blue footer text */
             margin-top: 3em;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #1a2a3a;
             font-size: 0.9em;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5em 1.5em;
+            }
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.8em; }
+            .section-subtitle { font-size: 1em; }
+            .container h2.section-heading-left { font-size: 1.5em; }
+            nav a {
+                padding: 0.6em 0.8em;
+                margin-left: 0.5em;
+                font-size: 0.8em;
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            header .logo { font-size: 2em; }
+            nav { display: block; }
+            nav a {
+                display: block;
+                margin: 0.5em 0;
+            }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.6em; }
+            .main-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -321,16 +357,12 @@
             <a href="#contact" class="main-button">Book Your Session Now!</a>
         </p>
 
-        <div class="hero-image-wrapper">
-            <img src="images/IMG_0070.jpg" alt="Two friends playing guitar, lit by warm lights" class="hero-image">
-        </div>
-
         <h2 class="section-heading-left">Explore Our Work</h2>
         <div class="gallery">
-            <img src="images/IMG_0852.jpg" alt="Person relaxing under a gazebo with string lights" >
+            <img src="images/IMG_0852.jpg" alt="Person relaxing under a gazebo with string lights">
             <img src="images/WhatsApp Image 2025-05-13 at 18.42.08.jpeg" alt="Two individuals, one wearing a jersey, in a stylized indoor setting">
             <img src="images/WhatsApp Image 2025-05-13 at 18.41.51.jpg" alt="A director's monitor showing a scene being filmed, highlighting production skills">
-            <img src="images/gallery-event1.jpg" alt="Placeholder for a community event or another photography example">
+            <img src="images/IMG_0070.jpg" alt="Friends playing music in a warm, artistic setting">
         </div>
     </div>
 
@@ -347,7 +379,7 @@
         </ul>
         </p>
         <p>When you choose Flicks_Focused, you're supporting a local student's academic and professional aspirations while receiving valuable photographic services and contributing to a great cause.</p>
-        <img src="images/supreet-headshot.jpg" alt="Supreet Sudharshana Headshot" style="border-radius: 50%; display: block; margin: 2em auto; width: 150px; height: 150px; object-fit: cover;">
+        <img src="images/supreet-headshot.jpg" alt="Supreet Sudharshana Headshot" style="border-radius: 50%; display: block; margin: 2em auto; width: 150px; height: 150px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
     </div>
 
     <div class="container" id="services">
@@ -420,29 +452,29 @@
             <p>"Amazing talent and a truly dedicated approach. Flicks_Focused provided incredible photos for our community event, capturing all the key moments perfectly."</p>
             <span class="testimonial-author">- Community Organizer</span>
         </div>
-        <p style="text-align: center; margin-top: 2em; font-style: italic; color: #666;">
+        <p style="text-align: center; margin-top: 2em; font-style: italic; color: #ADD8E6;">
             (These are placeholder testimonials. Remember to replace them with real client feedback!)
         </p>
     </div>
 
     <div class="container" id="contact">
         <h2 class="section-heading-left">Get In Touch!</h2>
-        <p style="text-align: center; font-family: 'Georgia', serif; font-size: 1.1em;">
+        <p style="text-align: center; font-family: 'Open Sans', sans-serif; font-size: 1.1em; color: #E0E0E0;">
             Have questions or ready to book a session? Reach out directly!
         </p>
         <p style="text-align: center; margin-bottom: 2em;">
             <a href="mailto:sudharshana.supreet@gmail.com" class="main-button">Email Supreet Sudharshana</a>
         </p>
 
-        <p style="text-align: center; font-family: 'Arial', sans-serif; font-size: 1.1em; margin-bottom: 1em;">
+        <p style="text-align: center; font-family: 'Open Sans', sans-serif; font-size: 1.1em; margin-bottom: 1em; color: #E0E0E0;">
             <strong>Phone:</strong> (945)237-0679
         </p>
-        <p style="text-align: center; font-family: 'Arial', sans-serif; font-size: 1.1em; margin-bottom: 1em;">
+        <p style="text-align: center; font-family: 'Open Sans', sans-serif; font-size: 1.1em; margin-bottom: 1em; color: #E0E0E0;">
             <strong>Connect with Flicks_Focused:</strong>
         </p>
         <ul style="text-align: center; list-style: none; padding: 0;">
-            <li style="display: inline-block; margin: 0 10px;"><a href="https://www.instagram.com/flicks_focused" target="_blank" style="color: #333; text-decoration: none; font-weight: bold;">Instagram</a></li>
-            <li style="display: inline-block; margin: 0 10px;"><a href="https://linktr.ee/flicks_focused" target="_blank" style="color: #333; text-decoration: none; font-weight: bold;">Linktree</a></li>
+            <li style="display: inline-block; margin: 0 10px;"><a href="https://www.instagram.com/flicks_focused" target="_blank" style="color: #ADD8E6; text-decoration: none; font-weight: 600;">Instagram</a></li>
+            <li style="display: inline-block; margin: 0 10px;"><a href="https://linktr.ee/flicks_focused" target="_blank" style="color: #ADD8E6; text-decoration: none; font-weight: 600;">Linktree</a></li>
         </ul>
     </div>
 
