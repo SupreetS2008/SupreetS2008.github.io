@@ -137,7 +137,13 @@
             object-fit: cover;
             border-radius: 4px; /* Rounded corners */
             box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow on images */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
         }
+        .gallery img:hover {
+            transform: scale(1.03); /* Slightly enlarge image on hover */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* More prominent shadow on hover */
+        }
+
 
         /* Service Table Styles - Clean, basic table */
         table {
@@ -159,7 +165,13 @@
             color: #444;
             font-weight: bold;
         }
-        tr:nth-child(even) { /* Subtle stripe for rows */
+        tbody tr {
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+        }
+        tbody tr:hover {
+            background-color: #f0f0f0; /* Subtle hover background for table rows */
+        }
+        tbody tr:nth-child(even) { /* Subtle stripe for rows */
             background-color: #fcfcfc;
         }
         .table-note {
@@ -179,7 +191,7 @@
             cursor: pointer;
             font-size: 1.1em;
             margin-top: 1.5em;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover */
             display: inline-block; /* Changed to inline-block for centering */
             text-decoration: none; /* Remove underline for links */
             font-family: 'Arial', sans-serif; /* Sans-serif for button */
@@ -188,6 +200,8 @@
         }
         .main-button:hover {
             background-color: #333;
+            transform: translateY(-2px); /* Slight lift */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
         }
 
         /* Form Labels (removed, but keeping style in case needed elsewhere) */
@@ -316,7 +330,7 @@
                 <tr>
                     <th>Service Category</th>
                     <th>Description</th>
-                    <th>Client Fee</th>
+                    <th>Client Fee (per hour)</th>
                     <th>Donation Breakdown (Project Costs vs. EWB-USA)</th>
                     <th>Key Deliverables</th>
                 </tr>
@@ -325,7 +339,7 @@
                 <tr>
                     <td><strong>Street & Fun Portraits</strong></td>
                     <td>Quick, casual portraits at local community events, parks, or designated pop-up spots. Great for individual or small group snapshots.</td>
-                    <td>$5 per person</td>
+                    <td>$5 per hour</td>
                     <td>($4 to project costs, $1 to EWB-USA)</td>
                     <td>3-5 high-resolution digital images, delivered via online gallery.</td>
                 </tr>
@@ -339,7 +353,7 @@
                 <tr>
                     <td><strong>Prom/Homecoming Moments</strong></td>
                     <td>Individual or small group photos at a pre-arranged location before the dance. Focus on capturing the excitement of the event.</td>
-                    <td>$15 per person</td>
+                    <td>$15 per hour</td>
                     <td>($12 to project costs, $3 to EWB-USA)</td>
                     <td>8-12 edited high-resolution digital images.</td>
                 </tr>
@@ -349,13 +363,6 @@
                     <td>$10 (Suggested Donation)</td>
                     <td>($8 to project costs, $2 to EWB-USA)</td>
                     <td>10-15 edited high-resolution digital images. (FREE for select non-profits willing to provide testimonials and acknowledge support for EWB-USA.)</td>
-                </tr>
-                <tr>
-                    <td><strong>Product Showcaser</strong></td>
-                    <td>Simple, clean images for small local businesses to showcase 1-3 products for online listings or social media.</td>
-                    <td>$15 per item</td>
-                    <td>($12 to project costs, $3 to EWB-USA)</td>
-                    <td>3-5 edited high-resolution images per item, on a clean background.</td>
                 </tr>
             </tbody>
         </table>
