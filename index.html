@@ -4,210 +4,292 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flicks_Focused: Community Photography Project - Supreet Sudharshana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Body Styles - Light background, serif font for main text */
+        /* Base Styles */
         body {
-            font-family: 'Georgia', serif; /* Classic serif font for body */
+            font-family: 'Open Sans', sans-serif; /* Clean sans-serif for body text */
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8; /* Very light grey/off-white background */
-            color: #333; /* Standard dark grey text */
-            line-height: 1.6; /* Improved readability */
-        }
-
-        /* Explicitly ensure strong tags are bold */
-        strong {
-            font-weight: bold !important; /* Added to ensure bolding always applies */
-        }
-
-        /* Header Styles - Clean, minimalist, no background color */
-        header {
-            background-color: #ffffff; /* White background for the very top */
-            padding: 1em 0;
-            text-align: center;
-            border-bottom: 1px solid #eee; /* Subtle separator from navigation */
-            position: relative; /* For logo positioning */
-        }
-        header .logo {
-            font-family: 'Arial', sans-serif; /* Using a sans-serif for a logo feel */
-            font-size: 2.5em; /* Larger logo text */
-            font-weight: bold;
+            background-color: #f8f8f8; /* Light grey background */
             color: #333;
-            margin-bottom: 0.2em;
-            text-decoration: none; /* In case it's a link */
-            display: block; /* Ensures it takes full width for centering */
-        }
-        header .tagline {
-            font-size: 0.9em;
-            color: #555;
-            margin-top: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
 
-        /* Navigation Bar Styles - Clean sans-serif, uppercase */
-        nav {
-            background-color: #ffffff; /* White background */
-            padding: 0.8em 0;
-            text-align: center;
-            border-bottom: 1px solid #ddd; /* Subtle line below nav */
+        strong {
+            font-weight: 600; /* Use Open Sans semi-bold for strong */
         }
-        nav a {
-            font-family: 'Arial', sans-serif; /* Sans-serif for navigation */
-            color: #333; /* Dark text for nav links */
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white header */
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+            position: sticky; /* Make header sticky */
+            top: 0;
+            z-index: 1000; /* Ensure header stays on top */
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif; /* Montserrat for logo */
+            font-size: 1.8em;
+            font-weight: 700; /* Bold */
+            color: #333;
             text-decoration: none;
-            padding: 0.8em 1.5em;
-            display: inline-block;
-            text-transform: uppercase; /* Uppercase like the example */
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        nav a {
+            font-family: 'Montserrat', sans-serif; /* Montserrat for nav links */
+            color: #555;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin-left: 1em;
             font-size: 0.9em;
-            letter-spacing: 0.05em;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
+
         nav a:hover {
-            color: #000; /* Darker on hover */
-            background-color: #f0f0f0; /* Subtle hover background */
+            color: #007bff; /* Blue on hover */
         }
 
-        /* Main Content Container Styles - Centered, fixed width, ample padding */
-        .container {
-            width: 85%;
-            max-width: 900px; /* Constrained width like the resume/tutoring site */
-            margin: 2em auto; /* Centered with vertical spacing */
-            background-color: #ffffff; /* White background for content boxes */
-            padding: 2.5em 3.5em; /* Generous padding inside containers */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Very subtle shadow */
-            border-radius: 4px; /* Slightly rounded corners */
+        /* Hero Section */
+        .hero-section {
+            height: 80vh; /* Takes up 80% of viewport height */
+            background: linear-gradient(to bottom, #0a0a0a, #2c3e50); /* Black to deep bluish-grey gradient */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2em;
         }
 
-        /* Heading Styles - Serif for main headings, sans-serif for sub-headings within sections */
-        h1, h2, h3 {
-            font-family: 'Georgia', serif; /* Main headings use serif */
-            color: #222; /* Darker headings */
-            text-align: center; /* Center main headings */
-            margin-bottom: 1em;
+        .hero-section h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 0.2em;
+            line-height: 1.1;
+        }
+
+        .hero-section .subtitle {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-bottom: 1.5em;
+            max-width: 700px;
+        }
+
+        .hero-button {
+            background-color: #007bff; /* Bright blue button */
+            color: white;
+            padding: 0.8em 2em;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .hero-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background-color: #ffffff;
+            padding: 4em 2em;
+            margin: 2em auto;
+            max-width: 1000px; /* Wider content sections */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        .section-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #333;
+            text-align: left;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid #eee; /* Subtle underline */
+        }
+
+        /* About Section Specifics (Two-column layout) */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            gap: 2em;
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        .about-text {
+            flex: 2; /* Text takes more space */
+            min-width: 300px; /* Minimum width before wrapping */
+        }
+
+        .about-image {
+            flex: 1; /* Image takes less space */
+            min-width: 200px; /* Minimum width before wrapping */
+            text-align: center; /* Center image within its flex item */
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 300px; /* Max width for the image */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5em;
+        }
+
+        .about-text ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 0.5em;
+        }
+
+        .about-text ul li::before {
+            content: '✓'; /* Custom checkmark bullet */
+            color: #007bff;
+            position: absolute;
+            left: 0;
             font-weight: bold;
         }
-        h1 { font-size: 2.5em; margin-bottom: 0.2em; }
-        h2 { font-size: 2em; margin-top: 1.5em; }
-        h3 { font-size: 1.5em; margin-top: 1.2em; }
 
-        .section-subtitle { /* For sub-heading like "Committed to Excellence" */
-            font-family: 'Georgia', serif;
-            font-size: 1.1em;
-            color: #555;
-            text-align: center;
-            margin-top: 0.5em;
-            margin-bottom: 2em; /* More space below hero subtitle */
-            font-style: italic;
-        }
-        
-        .container h2.section-heading-left { /* For "More About..." and "Services..." headings */
-            font-family: 'Arial', sans-serif; /* Sans-serif for section headings */
-            text-align: left; /* Aligned left like tutoring site */
-            font-size: 1.8em;
-            color: #444;
-            border-bottom: 1px solid #eee; /* Subtle underline */
-            padding-bottom: 0.5em;
-            margin-bottom: 1em;
-        }
-
-        /* Hero Section Image - Large and central */
-        .hero-image-wrapper {
-            width: 100%;
-            max-width: 700px; /* Constrain hero image width */
-            margin: 2em auto; /* Center the image with vertical space */
-            text-align: center;
-        }
-        .hero-image {
-            width: 100%;
-            height: auto;
-            max-height: 400px; /* Max height for the hero image */
-            object-fit: cover;
-            border-radius: 4px; /* Match container border-radius */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* More prominent shadow for hero image */
-        }
-
-        /* Gallery Styles - Subtle grid for images, similar to sample */
-        .gallery {
+        /* Services Section (Card Grid) */
+        .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted grid for more images */
-            gap: 1.5em; /* Spacing between grid items */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2em;
             margin-top: 2em;
         }
-        .gallery img {
-            width: 100%;
-            height: 180px; /* Consistent height for gallery images */
-            object-fit: cover;
-            border-radius: 4px; /* Rounded corners */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow on images */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
-        }
-        .gallery img:hover {
-            transform: scale(1.03); /* Slightly enlarge image on hover */
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* More prominent shadow on hover */
-        }
 
-
-        /* Service Table Styles - Clean, basic table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5em;
-            font-family: 'Arial', sans-serif; /* Sans-serif for table text */
-            font-size: 0.95em;
-        }
-        table, th, td {
-            border: 1px solid #e0e0e0; /* Light border */
-        }
-        th, td {
-            padding: 10px 15px; /* Ample padding */
-            text-align: left;
-        }
-        th {
-            background-color: #f5f5f5; /* Light header for table */
-            color: #444;
-            font-weight: bold;
-        }
-        tbody tr {
-            transition: background-color 0.3s ease; /* Smooth transition for hover */
-        }
-        tbody tr:hover {
-            background-color: #f0f0f0; /* Subtle hover background for table rows */
-        }
-        tbody tr:nth-child(even) { /* Subtle stripe for rows */
-            background-color: #fcfcfc;
-        }
-        .table-note {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 1em;
+        .service-card {
+            background-color: #fefefe;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 1.5em;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Button Styles (for general calls to action) */
-        .main-button { /* Reusing previous button style for email redirect */
-            background-color: #555; /* Neutral dark grey button */
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5em;
+            color: #007bff;
+            margin-bottom: 0.5em;
+        }
+
+        .service-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #333;
+            margin-top: 0.5em;
+            margin-bottom: 0.8em;
+        }
+
+        .service-card p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        .service-card .fee {
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 0.5em;
+            display: block;
+        }
+        .service-card .deliverables {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+            display: block;
+        }
+
+        .service-card .learn-more-button {
+            display: inline-block;
+            background-color: #eee;
+            color: #333;
+            padding: 0.6em 1.2em;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-card .learn-more-button:hover {
+            background-color: #ddd;
+        }
+
+        /* Portfolio Section (Image Grid) */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5em;
+            margin-top: 2em;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px; /* Consistent height for portfolio images */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-item img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .view-portfolio-button-container {
+            text-align: center;
+            margin-top: 3em;
+        }
+        .view-portfolio-button {
+            background-color: #007bff;
             color: white;
-            padding: 12px 30px;
+            padding: 0.8em 2em;
             border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            border-radius: 5px;
             font-size: 1.1em;
-            margin-top: 1.5em;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover */
-            display: inline-block; /* Changed to inline-block for centering */
-            text-decoration: none; /* Remove underline for links */
-            font-family: 'Arial', sans-serif; /* Sans-serif for button */
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        .main-button:hover {
-            background-color: #333;
-            transform: translateY(-2px); /* Slight lift */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+        .view-portfolio-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
         }
 
-        /* Testimonial specific styles */
+        /* Testimonials Section */
         .testimonial-item {
             background-color: #fefefe;
-            border-left: 5px solid #ccc;
+            border-left: 5px solid #007bff; /* Blue border */
             padding: 1.5em;
             margin-bottom: 1.5em;
             font-style: italic;
@@ -219,7 +301,7 @@
             margin: 0 0 0.5em 0;
         }
         .testimonial-author {
-            font-weight: bold;
+            font-weight: 600; /* Semi-bold */
             font-style: normal;
             color: #333;
             text-align: right;
@@ -227,224 +309,321 @@
             display: block;
         }
 
+        /* Contact Section */
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5em;
+            margin-top: 2em;
+        }
 
-        /* Form Labels (removed, but keeping style in case needed elsewhere) */
-        form label {
+        .form-group label {
             display: block;
             margin-bottom: 0.5em;
-            font-weight: bold;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.95em;
-            color: #444;
+            font-weight: 600;
+            color: #333;
         }
-        form input[type="text"],
-        form input[type="email"],
-        form textarea {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 1em;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: 'Georgia', serif;
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
             font-size: 1em;
+            box-sizing: border-box; /* Include padding in width */
         }
-        form textarea {
+
+        .form-group textarea {
+            min-height: 120px;
             resize: vertical;
-            min-height: 100px;
         }
 
-        /* List Styles */
-        ul {
-            list-style: none; /* Remove default bullets */
-            padding: 0;
-            margin: 1em 0;
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            padding: 0.8em 2em;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: auto; /* Allow button to size to content */
+            margin-top: 1em;
         }
-        ul li {
+
+        .submit-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 3em;
+            padding-top: 2em;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-info p {
             margin-bottom: 0.5em;
-            padding-left: 1.5em; /* Space for custom bullet */
-            position: relative;
+            font-size: 1.1em;
         }
-        ul li::before {
-            content: '•'; /* Custom bullet point */
-            color: #555; /* Color of the bullet */
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 1.2em;
-            line-height: 1;
-        }
-        ul li a {
-            color: #333; /* Darker link color */
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #007bff;
             text-decoration: none;
-            font-weight: bold;
-        }
-        ul li a:hover {
-            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
+        .social-links a:hover {
+            color: #0056b3;
+        }
 
-        /* Footer Styles */
+        /* Footer */
         footer {
             text-align: center;
-            padding: 1.5em 0;
-            background-color: #efefef; /* Light grey footer */
-            color: #555;
-            margin-top: 3em;
-            border-top: 1px solid #eee;
+            padding: 2em;
+            background-color: #333;
+            color: #ccc;
             font-size: 0.9em;
+            margin-top: 2em;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1em;
+            }
+            nav {
+                margin-top: 1em;
+            }
+            nav a {
+                margin: 0 0.5em;
+                padding: 0.5em 0.8em;
+            }
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            .hero-section .subtitle {
+                font-size: 1.2em;
+            }
+            .section-heading {
+                font-size: 1.8em;
+                text-align: center; /* Center headings on small screens */
+            }
+            .content-section {
+                padding: 2em 1em;
+            }
+            .about-content {
+                flex-direction: column; /* Stack image and text vertically */
+                align-items: center;
+            }
+            .about-image {
+                order: -1; /* Place image above text on small screens */
+                margin-bottom: 1.5em;
+            }
+            .service-grid, .portfolio-grid {
+                grid-template-columns: 1fr; /* Single column for services and portfolio */
+            }
+            .service-card, .portfolio-item {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 2em;
+            }
+            .hero-section .subtitle {
+                font-size: 1em;
+            }
+            .hero-button {
+                padding: 0.6em 1.5em;
+                font-size: 1em;
+            }
+            .logo {
+                font-size: 1.5em;
+            }
+            nav a {
+                display: block;
+                margin: 0.5em 0;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#home" class="logo">Flicks_Focused</a>
-        <p class="tagline">Community Photography Project by Supreet Sudharshana</p>
+        <a href="#home" class="logo">Supreet Sudharshana</a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About This Project</a>
-        <a href="#services">Services & Contributions</a>
-        <a href="#donations">Our Cause: EWB-USA</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <main>
+        <section id="home" class="hero-section">
+            <h1>Flicks Focused</h1>
+            <p class="subtitle">Community Photography Project by Supreet Sudharshana</p>
+            <a href="#contact" class="hero-button">Let's Get Started</a>
+        </section>
 
-    <div class="container" id="home">
-        <h1>Welcome to Flicks_Focused!</h1>
-        <p class="section-subtitle">Capturing Your Moments, Making a Difference</p>
-        <p>Hello! I'm Supreet Sudharshana, and Flicks_Focused is my community-oriented photography project aimed at providing accessible photo services to the wonderful residents of Melissa, TX. My goal is to help capture your special moments, support local initiatives, and contribute to a great cause, all while developing my skills and portfolio for future college applications.</p>
-        <p>I believe everyone deserves quality photos, regardless of budget. Take a look at the types of photography I offer, and let's create something memorable together!</p>
-        
-        <p style="text-align: center; margin-top: 2em; margin-bottom: 2em;">
-            <a href="#contact" class="main-button">Book Your Session Now!</a>
-        </p>
+        <section id="about" class="content-section">
+            <h2 class="section-heading">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi, I'm Supreet Sudharshana, a dedicated high school student from Melissa High School with a strong passion for photography, technology, and community engagement. My journey into photography began with a desire to freeze unique moments and tell compelling stories through visual art.</p>
+                    <p>Flicks_Focused is my initiative to make quality photography available to everyone in Melissa, TX, especially those for whom traditional photography services might be too expensive. This project is a way for me to apply my skills in Audio Video Production and Computer Science, give back to my community, hone my photographic abilities, and strengthen my portfolio for future college applications, particularly those focused on STEM and engineering fields where I aim to combine technical concepts with visual storytelling.</p>
+                    <p>I bring a committed and detail-oriented approach to every session, ensuring high-quality results. I am proud to lead this project, leveraging my experience in:
+                    <ul>
+                        <li><strong>Audio Video Production:</strong> Practicum experience in video production for football games and live streams.</li>
+                        <li><strong>Leadership & Organization:</strong> Vice President of SkillsUSA, Co-Vice President of Robotics, and President of UIL Math Team, demonstrating strong teamwork and problem-solving skills.</li>
+                        <li><strong>Technical Skills:</strong> Background in Python, Java, and core coding skills, enhancing my ability to manage digital assets and understand web presentation.</li>
+                        <li><strong>Community Engagement:</strong> Dedicated to providing accessible services and contributing to meaningful causes.</li>
+                    </ul>
+                    </p>
+                    <p>When you choose Flicks_Focused, you're supporting a local student's academic and professional aspirations while receiving valuable photographic services and contributing to a great cause.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/supreet-headshot.jpg" alt="Supreet Sudharshana Headshot">
+                </div>
+            </div>
+        </section>
 
-        <div class="hero-image-wrapper">
-            <img src="images/IMG_0070.jpg" alt="Two friends playing guitar, lit by warm lights" class="hero-image">
-        </div>
+        <section id="services" class="content-section">
+            <h2 class="section-heading">Services</h2>
+            <p>Here's a breakdown of the photography services I offer. Please note that a primary portion of the fee covers minimal project operational costs (equipment wear, software access), with the remainder directly supporting Engineers Without Borders USA.</p>
 
-        <h2 class="section-heading-left">Explore Our Work</h2>
-        <div class="gallery">
-            <img src="images/IMG_0852.jpg" alt="Person relaxing under a gazebo with string lights" >
-            <img src="images/WhatsApp Image 2025-05-13 at 18.42.08.jpeg" alt="Two individuals, one wearing a jersey, in a stylized indoor setting">
-            <img src="images/WhatsApp Image 2025-05-13 at 18.41.51.jpg" alt="A director's monitor showing a scene being filmed, highlighting production skills">
-            <img src="images/gallery-event1.jpg" alt="Placeholder for a community event or another photography example">
-        </div>
-    </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">📸</div> <h3>Street & Fun Portraits</h3>
+                    <p>Quick, casual portraits at local community events, parks, or designated pop-up spots. Great for individual or small group snapshots.</p>
+                    <span class="fee">$5 per hour</span>
+                    <span class="deliverables">3-5 high-resolution digital images. ($4 to project costs, $1 to EWB-USA)</span>
+                    <a href="#contact" class="learn-more-button">Learn More</a>
+                </div>
 
-    <div class="container" id="about">
-        <h2 class="section-heading-left">About Flicks_Focused & Supreet Sudharshana</h2>
-        <p>Hi, I'm Supreet Sudharshana, a dedicated high school student from Melissa High School with a strong passion for photography, technology, and community engagement. My journey into photography began with a desire to freeze unique moments and tell compelling stories through visual art.</p>
-        <p>Flicks_Focused is my initiative to make quality photography available to everyone in Melissa, TX, especially those for whom traditional photography services might be too expensive. This project is a way for me to apply my skills in Audio Video Production and Computer Science, give back to my community, hone my photographic abilities, and strengthen my portfolio for future college applications, particularly those focused on STEM and engineering fields where I aim to combine technical concepts with visual storytelling.</p>
-        <p>I bring a committed and detail-oriented approach to every session, ensuring high-quality results. I am proud to lead this project, leveraging my experience in:
-        <ul>
-            <li><strong>Audio Video Production:</strong> Practicum experience in video production for football games and live streams.</li>
-            <li><strong>Leadership & Organization:</strong> Vice President of SkillsUSA, Co-Vice President of Robotics, and President of UIL Math Team, demonstrating strong teamwork and problem-solving skills.</li>
-            <li><strong>Technical Skills:</strong> Background in Python, Java, and core coding skills, enhancing my ability to manage digital assets and understand web presentation.</li>
-            <li><strong>Community Engagement:</strong> Dedicated to providing accessible services and contributing to meaningful causes.</li>
-        </ul>
-        </p>
-        <p>When you choose Flicks_Focused, you're supporting a local student's academic and professional aspirations while receiving valuable photographic services and contributing to a great cause.</p>
-        <img src="images/supreet-headshot.jpg" alt="Supreet Sudharshana Headshot" style="border-radius: 50%; display: block; margin: 2em auto; width: 150px; height: 150px; object-fit: cover;">
-    </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div> <h3>Senior Spotlight</h3>
+                    <p>Simple, personalized sessions to commemorate high school graduation. Focus on capturing personality in 1-2 outfits/locations.</p>
+                    <span class="fee">$20</span>
+                    <span class="deliverables">15-20 edited high-resolution digital images. ($15 to project costs, $5 to EWB-USA)</span>
+                    <a href="#contact" class="learn-more-button">Learn More</a>
+                </div>
 
-    <div class="container" id="services">
-        <h2 class="section-heading-left">Services & Community Contributions</h2>
-        <p>Here's a breakdown of the photography services I offer. Please note that a primary portion of the fee covers minimal project operational costs (equipment wear, software access), with the remainder directly supporting Engineers Without Borders USA.</p>
+                <div class="service-card">
+                    <div class="service-icon">🎉</div> <h3>Prom/Homecoming Moments</h3>
+                    <p>Individual or small group photos at a pre-arranged location before the dance. Focus on capturing the excitement of the event.</p>
+                    <span class="fee">$15 per hour</span>
+                    <span class="deliverables">8-12 edited high-resolution digital images. ($12 to project costs, $3 to EWB-USA)</span>
+                    <a href="#contact" class="learn-more-button">Learn More</a>
+                </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Service Category</th>
-                    <th>Description</th>
-                    <th>Client Fee (per hour)</th>
-                    <th>Donation Breakdown (Project Costs vs. EWB-USA)</th>
-                    <th>Key Deliverables</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Street & Fun Portraits</strong></td>
-                    <td>Quick, casual portraits at local community events, parks, or designated pop-up spots. Great for individual or small group snapshots.</td>
-                    <td>$5 per hour</td>
-                    <td>($4 to project costs, $1 to EWB-USA)</td>
-                    <td>3-5 high-resolution digital images, delivered via online gallery.</td>
-                </tr>
-                <tr>
-                    <td><strong>Senior Spotlight</strong></td>
-                    <td>Simple, personalized sessions to commemorate high school graduation. Focus on capturing personality in 1-2 outfits/locations.</td>
-                    <td>$20</td>
-                    <td>($15 to project costs, $5 to EWB-USA)</td>
-                    <td>15-20 edited high-resolution digital images. (First 5 seniors still FREE with testimonials!)</td>
-                </tr>
-                <tr>
-                    <td><strong>Prom/Homecoming Moments</strong></td>
-                    <td>Individual or small group photos at a pre-arranged location before the dance. Focus on capturing the excitement of the event.</td>
-                    <td>$15 per hour</td>
-                    <td>($12 to project costs, $3 to EWB-USA)</td>
-                    <td>8-12 edited high-resolution digital images.</td>
-                </tr>
-                <tr>
-                    <td><strong>Community & Campaign Imagery</strong></td>
-                    <td>Photography for local non-profit events, small community initiatives, or grassroots awareness campaigns. Provides visual content for social media or flyers.</td>
-                    <td>$10 (Suggested Donation)</td>
-                    <td>($8 to project costs, $2 to EWB-USA)</td>
-                    <td>10-15 edited high-resolution digital images. (FREE for select non-profits willing to provide testimonials and acknowledge support for EWB-USA.)</td>
-                </tr>
-            </tbody>
-        </table>
-        <p class="table-note">These fees are structured to prioritize covering project expenses first, with a dedicated portion also contributing to Engineers Without Borders USA.</p>
-    </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div> <h3>Community & Campaign Imagery</h3>
+                    <p>Photography for local non-profit events, small community initiatives, or grassroots awareness campaigns. Provides visual content for social media or flyers.</p>
+                    <span class="fee">$10 (Suggested Donation)</span>
+                    <span class="deliverables">10-15 edited high-resolution digital images. ($8 to project costs, $2 to EWB-USA)</span>
+                    <a href="#contact" class="learn-more-button">Learn More</a>
+                </div>
+            </div>
+            <p class="table-note" style="text-align: center; margin-top: 2em; color: #666; font-size: 0.9em;">
+                These fees are structured to prioritize covering project expenses first, with a dedicated portion also contributing to Engineers Without Borders USA.
+            </p>
+        </section>
 
-    <div class="container" id="donations">
-        <h2 class="section-heading-left">Our Cause: Supporting Engineers Without Borders USA</h2>
-        <p>A core part of the Flicks_Focused project is giving back, and I'm proud to support Engineers Without Borders USA (EWB-USA). As a student passionate about STEM and engineering, I deeply admire EWB-USA's mission to build a better world through engineering projects that empower communities to meet their basic human needs.</p>
-        <p>EWB-USA collaborates with communities to implement sustainable, community-driven engineering solutions worldwide. Their work directly addresses critical challenges in areas like clean water, sanitation, infrastructure, and renewable energy. This aligns perfectly with my own academic and career aspirations in STEM, and my belief in using practical skills to create positive change.</p>
-        <p>While the primary focus of fees is to cover the operational costs of this community photography project, a dedicated portion of every client fee is also donated directly to Engineers Without Borders USA. By participating in this project, you're not only getting cherished photographs but also directly contributing to vital engineering initiatives that improve lives globally.</p>
-        <p style="text-align: center; margin-top: 2em;"><a href="https://ewb-usa.org/" target="_blank" class="main-button" style="display: inline-block; width: auto; max-width: none;">Learn more about EWB-USA's mission</a></p>
-    </div>
+        <section id="portfolio" class="content-section">
+            <h2 class="section-heading">Portfolio</h2>
+            <p style="text-align: center; margin-bottom: 2em; color: #555;">A Glimpse of My Work</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/IMG_0852.jpg" alt="Person relaxing under a gazebo with string lights">
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/WhatsApp Image 2025-05-13 at 18.42.08.jpeg" alt="Two individuals, one wearing a jersey, in a stylized indoor setting">
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/WhatsApp Image 2025-05-13 at 18.41.51.jpg" alt="A director's monitor showing a scene being filmed, highlighting production skills">
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/portfolio-placeholder.jpg" alt="Another photography example">
+                </div>
+            </div>
+            <div class="view-portfolio-button-container">
+                <a href="#contact" class="view-portfolio-button">View Full Portfolio (Coming Soon!)</a>
+            </div>
+        </section>
 
-    <div class="container" id="testimonials">
-        <h2 class="section-heading-left">What Our Clients Say</h2>
-        <div class="testimonial-item">
-            <p>"Supreet captured our family's holiday photos beautifully! The process was smooth, and the results were stunning. Highly recommend Flicks_Focused!"</p>
-            <span class="testimonial-author">- Happy Client, Melissa TX</span>
-        </div>
-        <div class="testimonial-item">
-            <p>"We needed some quick headshots for our school club, and Supreet delivered professional quality in record time. Plus, it supports a great cause!"</p>
-            <span class="testimonial-author">- Local School Club</span>
-        </div>
-        <div class="testimonial-item">
-            <p>"Amazing talent and a truly dedicated approach. Flicks_Focused provided incredible photos for our community event, capturing all the key moments perfectly."</p>
-            <span class="testimonial-author">- Community Organizer</span>
-        </div>
-        <p style="text-align: center; margin-top: 2em; font-style: italic; color: #666;">
-            (These are placeholder testimonials. Remember to replace them with real client feedback!)
-        </p>
-    </div>
+        <section id="testimonials" class="content-section">
+            <h2 class="section-heading">What Our Clients Say</h2>
+            <div class="testimonial-item">
+                <p>"Supreet captured our family's holiday photos beautifully! The process was smooth, and the results were stunning. Highly recommend Flicks_Focused!"</p>
+                <span class="testimonial-author">- Happy Client, Melissa TX</span>
+            </div>
+            <div class="testimonial-item">
+                <p>"We needed some quick headshots for our school club, and Supreet delivered professional quality in record time. Plus, it supports a great cause!"</p>
+                <span class="testimonial-author">- Local School Club</span>
+            </div>
+            <div class="testimonial-item">
+                <p>"Amazing talent and a truly dedicated approach. Flicks_Focused provided incredible photos for our community event, capturing all the key moments perfectly."</p>
+                <span class="testimonial-author">- Community Organizer</span>
+            </div>
+            <p style="text-align: center; margin-top: 2em; font-style: italic; color: #666;">
+                (These are placeholder testimonials. Remember to replace them with real client feedback!)
+            </p>
+        </section>
 
-    <div class="container" id="contact">
-        <h2 class="section-heading-left">Get In Touch!</h2>
-        <p style="text-align: center; font-family: 'Georgia', serif; font-size: 1.1em;">
-            Have questions or ready to book a session? Reach out directly!
-        </p>
-        <p style="text-align: center; margin-bottom: 2em;">
-            <a href="mailto:sudharshana.supreet@gmail.com" class="main-button">Email Supreet Sudharshana</a>
-        </p>
+        <section id="contact" class="content-section">
+            <h2 class="section-heading">Contact Me</h2>
+            <p style="text-align: center; margin-bottom: 2em; color: #555;">Ready to discuss your project? Send a message!</p>
 
-        <p style="text-align: center; font-family: 'Arial', sans-serif; font-size: 1.1em; margin-bottom: 1em;">
-            <strong>Phone:</strong> (945)237-0679
-        </p>
-        <p style="text-align: center; font-family: 'Arial', sans-serif; font-size: 1.1em; margin-bottom: 1em;">
-            <strong>Connect with Flicks_Focused:</strong>
-        </p>
-        <ul style="text-align: center; list-style: none; padding: 0;">
-            <li style="display: inline-block; margin: 0 10px;"><a href="https://www.instagram.com/flicks_focused" target="_blank" style="color: #333; text-decoration: none; font-weight: bold;">Instagram</a></li>
-            <li style="display: inline-block; margin: 0 10px;"><a href="https://linktr.ee/flicks_focused" target="_blank" style="color: #333; text-decoration: none; font-weight: bold;">Linktree</a></li>
-        </ul>
-    </div>
+            <form class="contact-form" action="mailto:sudharshana.supreet@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+
+            <div class="contact-info">
+                <p><strong>Email:</strong> sudharshana.supreet@gmail.com</p>
+                <p><strong>Phone:</strong> (945)237-0679</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/flicks_focused" target="_blank">Instagram</a> |
+                    <a href="https://linktr.ee/flicks_focused" target="_blank">Linktree</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="donations" class="content-section">
+            <h2 class="section-heading">Our Cause: Supporting Engineers Without Borders USA</h2>
+            <p>A core part of the Flicks_Focused project is giving back, and I'm proud to support Engineers Without Borders USA (EWB-USA). As a student passionate about STEM and engineering, I deeply admire EWB-USA's mission to build a better world through engineering projects that empower communities to meet their basic human needs.</p>
+            <p>EWB-USA collaborates with communities to implement sustainable, community-driven engineering solutions worldwide. Their work directly addresses critical challenges in areas like clean water, sanitation, infrastructure, and renewable energy. This aligns perfectly with my own academic and career aspirations in STEM, and my belief in using practical skills to create positive change.</p>
+            <p>While the primary focus of fees is to cover the operational costs of this community photography project, a dedicated portion of every client fee is also donated directly to Engineers Without Borders USA. By participating in this project, you're not only getting cherished photographs but also directly contributing to vital engineering initiatives that improve lives globally.</p>
+            <p style="text-align: center; margin-top: 2em;"><a href="https://ewb-usa.org/" target="_blank" class="hero-button">Learn more about EWB-USA's mission</a></p>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Flicks_Focused: A Community Photography Project by Supreet Sudharshana. All rights reserved.</p>
