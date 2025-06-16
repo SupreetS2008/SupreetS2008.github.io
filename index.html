@@ -3,30 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flicks_Focused: Community Photography Project</title>
+    <title>Flicks_Focused: Community Photography Project - Supreet Sudharshana</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        header { background-color: #333; color: white; padding: 1em 0; text-align: center; }
-        nav { background-color: #555; padding: 0.5em 0; text-align: center; }
-        nav a { color: white; text-decoration: none; padding: 0.8em 1.5em; display: inline-block; }
-        nav a:hover { background-color: #777; }
-        .container { width: 80%; margin: 2em auto; background-color: white; padding: 2em; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1, h2, h3 { color: #333; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1em; margin-top: 1em; }
-        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; }
-        .service-item { border-bottom: 1px solid #eee; padding-bottom: 1em; margin-bottom: 1em; }
-        table { width: 100%; border-collapse: collapse; margin-top: 1em; }
-        table, th, td { border: 1px solid #ddd; }
-        th, td { padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        footer { text-align: center; padding: 1em 0; background-color: #333; color: white; margin-top: 2em; }
+        /* General Body Styles - Light background, serif font for main text */
+        body {
+            font-family: 'Georgia', serif; /* Classic serif font for body */
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* Very light grey/off-white background */
+            color: #333; /* Standard dark grey text */
+            line-height: 1.6; /* Improved readability */
+        }
+
+        /* Header Styles - Clean, minimalist, no background color */
+        header {
+            background-color: #ffffff; /* White background for the very top */
+            padding: 1em 0;
+            text-align: center;
+            border-bottom: 1px solid #eee; /* Subtle separator from navigation */
+            position: relative; /* For logo positioning */
+        }
+        header .logo {
+            font-family: 'Arial', sans-serif; /* Using a sans-serif for a logo feel */
+            font-size: 2.5em; /* Larger logo text */
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.2em;
+            text-decoration: none; /* In case it's a link */
+            display: block; /* Ensures it takes full width for centering */
+        }
+        header .tagline {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 0;
+        }
+
+        /* Navigation Bar Styles - Clean sans-serif, uppercase */
+        nav {
+            background-color: #ffffff; /* White background */
+            padding: 0.8em 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd; /* Subtle line below nav */
+        }
+        nav a {
+            font-family: 'Arial', sans-serif; /* Sans-serif for navigation */
+            color: #333; /* Dark text for nav links */
+            text-decoration: none;
+            padding: 0.8em 1.5em;
+            display: inline-block;
+            text-transform: uppercase; /* Uppercase like the example */
+            font-size: 0.9em;
+            letter-spacing: 0.05em;
+        }
+        nav a:hover {
+            color: #000; /* Darker on hover */
+            background-color: #f0f0f0; /* Subtle hover background */
+        }
+
+        /* Main Content Container Styles - Centered, fixed width, ample padding */
+        .container {
+            width: 85%;
+            max-width: 900px; /* Constrained width like the resume/tutoring site */
+            margin: 2em auto; /* Centered with vertical spacing */
+            background-color: #ffffff; /* White background for content boxes */
+            padding: 2.5em 3.5em; /* Generous padding inside containers */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Very subtle shadow */
+            border-radius: 4px; /* Slightly rounded corners */
+        }
+
+        /* Heading Styles - Serif for main headings, sans-serif for sub-headings within sections */
+        h1, h2, h3 {
+            font-family: 'Georgia', serif; /* Main headings use serif */
+            color: #222; /* Darker headings */
+            text-align: center; /* Center main headings */
+            margin-bottom: 1em;
+            font-weight: bold;
+        }
+        h1 { font-size: 2.5em; margin-bottom: 0.2em; }
+        h2 { font-size: 2em; margin-top: 1.5em; }
+        h3 { font-size: 1.5em; margin-top: 1.2em; }
+
+        .section-subtitle { /* For sub-heading like "Committed to Excellence" */
+            font-family: 'Georgia', serif;
+            font-size: 1.1em;
+            color: #555;
+            text-align: center;
+            margin-top: 0.5em;
+            margin-bottom: 2em; /* More space below hero subtitle */
+            font-style: italic;
+        }
+        
+        .container h2.section-heading-left { /* For "More About..." and "Services..." headings */
+            font-family: 'Arial', sans-serif; /* Sans-serif for section headings */
+            text-align: left; /* Aligned left like tutoring site */
+            font-size: 1.8em;
+            color: #444;
+            border-bottom: 1px solid #eee; /* Subtle underline */
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        /* Hero Section Image - Large and central */
+        .hero-image-wrapper {
+            width: 100%;
+            max-width: 700px; /* Constrain hero image width */
+            margin: 2em auto; /* Center the image with vertical space */
+            text-align: center;
+        }
+        .hero-image {
+            width: 100%;
+            height: auto;
+            max-height: 400px; /* Max height for the hero image */
+            object-fit: cover;
+            border-radius: 4px; /* Match container border-radius */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* More prominent shadow for hero image */
+        }
+
+        /* Gallery Styles - Subtle grid for images, similar to sample */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted grid for more images */
+            gap: 1.5em; /* Spacing between grid items */
+            margin-top: 2em;
+        }
+        .gallery img {
+            width: 100%;
+            height: 180px; /* Consistent height for gallery images */
+            object-fit: cover;
+            border-radius: 4px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow on images */
+        }
+
+        /* Service Table Styles - Clean, basic table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5em;
+            font-family: 'Arial', sans-serif; /* Sans-serif for table text */
+            font-size: 0.95em;
+        }
+        table, th, td {
+            border: 1px solid #e0e0e0; /* Light border */
+        }
+        th, td {
+            padding: 10px 15px; /* Ample padding */
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5; /* Light header for table */
+            color: #444;
+            font-weight: bold;
+        }
+        tr:nth-child(even) { /* Subtle stripe for rows */
+            background-color: #fcfcfc;
+        }
+        .table-note {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 1em;
+            text-align: center;
+        }
+
+        /* Button Styles (for general calls to action) */
+        .main-button { /* Reusing previous button style for email redirect */
+            background-color: #555; /* Neutral dark grey button */
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 1.5em;
+            transition: background-color 0.3s ease;
+            display: inline-block; /* Changed to inline-block for centering */
+            text-decoration: none; /* Remove underline for links */
+            font-family: 'Arial', sans-serif; /* Sans-serif for button */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .main-button:hover {
+            background-color: #333;
+        }
+
+        /* Form Labels (removed, but keeping style in case needed elsewhere) */
+        form label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95em;
+            color: #444;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* List Styles */
+        ul {
+            list-style: none; /* Remove default bullets */
+            padding: 0;
+            margin: 1em 0;
+        }
+        ul li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em; /* Space for custom bullet */
+            position: relative;
+        }
+        ul li::before {
+            content: '•'; /* Custom bullet point */
+            color: #555; /* Color of the bullet */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+            line-height: 1;
+        }
+        ul li a {
+            color: #333; /* Darker link color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 1.5em 0;
+            background-color: #efefef; /* Light grey footer */
+            color: #555;
+            margin-top: 3em;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Flicks_Focused: Community Photography Project</h1>
-        <p>Capturing Moments Affordably in Melissa, TX, while Supporting St. Jude!</p>
+        <a href="#home" class="logo">Flicks_Focused</a>
+        <p class="tagline">Community Photography Project by Supreet Sudharshana</p>
     </header>
 
     <nav>
@@ -38,28 +268,43 @@
     </nav>
 
     <div class="container" id="home">
-        <h2>Welcome to Flicks_Focused!</h2>
-        <p>Hello! I'm [Your Name], and Flicks_Focused is my community-oriented photography project aimed at providing accessible photo services to the wonderful residents of Melissa, TX. My goal is to help capture your special moments, support local initiatives, and contribute to a great cause, all while developing my skills and portfolio for future college applications.</p>
+        <h1>Welcome to Flicks_Focused!</h1>
+        <p class="section-subtitle">Capturing Your Moments, Making a Difference</p>
+        <p>Hello! I'm Supreet Sudharshana, and Flicks_Focused is my community-oriented photography project aimed at providing accessible photo services to the wonderful residents of Melissa, TX. My goal is to help capture your special moments, support local initiatives, and contribute to a great cause, all while developing my skills and portfolio for future college applications.</p>
         <p>I believe everyone deserves quality photos, regardless of budget. Take a look at the types of photography I offer, and let's create something memorable together!</p>
+        
+        <div class="hero-image-wrapper">
+            <img src="images/hero-placeholder.jpg" alt="Impactful Photography Scene" class="hero-image">
+        </div>
+
+        <h2 class="section-heading-left">Explore Our Work</h2>
         <div class="gallery">
-            <img src="https://via.placeholder.com/250x200?text=Your+Best+Photo+1" alt="Photography example">
-            <img src="https://via.placeholder.com/250x200?text=Your+Best+Photo+2" alt="Photography example">
-            <img src="https://via.placeholder.com/250x200?text=Your+Best+Photo+3" alt="Photography example">
-            <img src="https://via.placeholder.com/250x200?text=Your+Best+Photo+4" alt="Photography example">
+            <img src="images/gallery-senior1.jpg" alt="Senior Portrait Example">
+            <img src="images/gallery-prom.jpg" alt="Prom Photo Example">
+            <img src="images/gallery-product1.jpg" alt="Product Photo Example">
+            <img src="images/gallery-event1.jpg" alt="Community Event Photo Example">
         </div>
     </div>
 
     <div class="container" id="about">
-        <h2>About This Project & Me</h2>
-        <p>Hi, I'm [Your Name], a local high school student with a passion for photography and community service. Flicks_Focused is my initiative to make quality photography available to everyone in Melissa, TX, especially those for whom traditional photography services might be too expensive.</p>
-        <p>Beyond providing affordable photos, a significant portion of every fee covers project operational costs, with the remainder going directly to St. Jude Children's Research Hospital. This project is a way for me to give back to my community, hone my photographic skills, and demonstrate my commitment to service as I prepare for college applications.</p>
-        <p>I specialize in [mention your strong suits, e.g., capturing candid moments, creating natural portraits, focusing on product details] and am dedicated to delivering images you'll cherish.</p>
-        <img src="https://via.placeholder.com/200x200?text=Your+Headshot" alt="Your professional headshot" style="border-radius: 50%; display: block; margin: 1em auto;">
+        <h2 class="section-heading-left">About Flicks_Focused & Supreet Sudharshana</h2>
+        <p>Hi, I'm Supreet Sudharshana, a dedicated high school student from Melissa High School with a strong passion for photography, technology, and community engagement. My journey into photography began with a desire to freeze unique moments and tell compelling stories through visual art.</p>
+        <p>Flicks_Focused is my initiative to make quality photography available to everyone in Melissa, TX, especially those for whom traditional photography services might be too expensive. This project is a way for me to apply my skills in Audio Video Production and Computer Science, give back to my community, hone my photographic abilities, and strengthen my portfolio for future college applications, particularly those focused on STEM and engineering fields where I aim to combine technical concepts with visual storytelling.</p>
+        <p>I bring a committed and detail-oriented approach to every session, ensuring high-quality results. I am proud to lead this project, leveraging my experience in:
+        <ul>
+            <li>**Audio Video Production:** Practicum experience in video production for football games and live streams.</li>
+            <li>**Leadership & Organization:** Vice President of SkillsUSA, Co-Vice President of Robotics, and President of UIL Math Team, demonstrating strong teamwork and problem-solving skills.</li>
+            <li>**Technical Skills:** Background in Python, Java, and core coding skills, enhancing my ability to manage digital assets and understand web presentation.</li>
+            <li>**Community Engagement:** Dedicated to providing accessible services and contributing to meaningful causes.</li>
+        </ul>
+        </p>
+        <p>When you choose Flicks_Focused, you're supporting a local student's academic and professional aspirations while receiving valuable photographic services and contributing to a great cause.</p>
+        <img src="images/supreet-headshot.jpg" alt="Supreet Sudharshana Headshot" style="border-radius: 50%; display: block; margin: 2em auto; width: 150px; height: 150px; object-fit: cover;">
     </div>
 
     <div class="container" id="services">
-        <h2>Services & Community Contributions</h2>
-        <p>Here's a breakdown of the photography services I offer and how your contribution helps both cover project costs and supports St. Jude Children's Research Hospital.</p>
+        <h2 class="section-heading-left">Services & Community Contributions</h2>
+        <p>Here's a breakdown of the photography services I offer. Please note that a primary portion of the fee covers minimal project operational costs (equipment wear, software access), with the remainder directly supporting St. Jude Children's Research Hospital.</p>
 
         <table>
             <thead>
@@ -109,37 +354,39 @@
                 </tr>
             </tbody>
         </table>
-        <p><strong>Please Note:</strong> My goal is to provide accessible photography. These fees are set to cover minimal project expenses first, and then contribute to St. Jude. Contact me for any specific requests or questions!</p>
+        <p class="table-note">These fees are structured to prioritize covering project expenses first, with a dedicated portion also contributing to St. Jude.</p>
     </div>
 
     <div class="container" id="donations">
-        <h2>Our Cause: Supporting St. Jude Children's Research Hospital</h2>
+        <h2 class="section-heading-left">Our Cause: Supporting St. Jude Children's Research Hospital</h2>
         <p>A core part of the Flicks_Focused project is giving back. I am deeply committed to supporting St. Jude Children's Research Hospital. Their vital work in advancing cures and means of prevention for pediatric catastrophic diseases, while ensuring families never receive a bill, is truly inspiring.</p>
         <p>While the primary focus of fees is to cover the operational costs of this community photography project, a dedicated portion of every client fee is also donated directly to St. Jude. By participating in this project, you're not only getting cherished photographs but also directly contributing to life-saving research and care for children in need. Thank you for helping me support this incredible organization!</p>
-        <p>Learn more about St. Jude's mission here: <a href="https://www.stjude.org/" target="_blank">www.stjude.org</a></p>
+        <p style="text-align: center; margin-top: 2em;"><a href="https://www.stjude.org/" target="_blank" class="main-button" style="display: inline-block; width: auto; max-width: none;">Learn more about St. Jude's mission</a></p>
     </div>
 
     <div class="container" id="contact">
-        <h2>Get In Touch!</h2>
-        <p>Ready to book a session, or have questions about how I can help your project or capture your moments? I'd love to hear from you!</p>
-        <p><strong>Email:</strong> your_email@example.com</p>
-        <p><strong>Social Media:</strong></p>
-        <ul>
-            <li><a href="[Your Instagram Link]" target="_blank">Instagram</a></li>
-            <li><a href="[Your Facebook Link]" target="_blank">Facebook</a></li>
-            </ul>
-        <p>Or fill out the form below and I'll get back to you as soon as possible:</p>
-        <form action="#" method="POST">
-            <p><label for="name">Name:</label><br><input type="text" id="name" name="name" required></p>
-            <p><label for="email">Email:</label><br><input type="email" id="email" name="email" required></p>
-            <p><label for="subject">Subject:</label><br><input type="text" id="subject" name="subject"></p>
-            <p><label for="message">Message:</label><br><textarea id="message" name="message" rows="5" required></textarea></p>
-            <p><button type="submit">Send Message</button></p>
-        </form>
+        <h2 class="section-heading-left">Get In Touch!</h2>
+        <p style="text-align: center; font-family: 'Georgia', serif; font-size: 1.1em;">
+            Have questions or ready to book a session? Reach out directly!
+        </p>
+        <p style="text-align: center; margin-bottom: 2em;">
+            <a href="mailto:sudharshana.supreet@gmail.com" class="main-button">Email Supreet Sudharshana</a>
+        </p>
+
+        <p style="text-align: center; font-family: 'Arial', sans-serif; font-size: 1.1em; margin-bottom: 1em;">
+            <strong>Phone:</strong> (945)237-0679
+        </p>
+        <p style="text-align: center; font-family: 'Arial', sans-serif; font-size: 1.1em; margin-bottom: 1em;">
+            <strong>Connect with Flicks_Focused:</strong>
+        </p>
+        <ul style="text-align: center; list-style: none; padding: 0;">
+            <li style="display: inline-block; margin: 0 10px;"><a href="https://www.instagram.com/flicks_focused" target="_blank" style="color: #333; text-decoration: none; font-weight: bold;">Instagram</a></li>
+            <li style="display: inline-block; margin: 0 10px;"><a href="https://linktr.ee/flicks_focused" target="_blank" style="color: #333; text-decoration: none; font-weight: bold;">Linktree</a></li>
+        </ul>
     </div>
 
     <footer>
-        <p>&copy; 2025 Flicks_Focused: A Community Photography Project. All rights reserved.</p>
+        <p>&copy; 2025 Flicks_Focused: A Community Photography Project by Supreet Sudharshana. All rights reserved.</p>
     </footer>
 
 </body>
