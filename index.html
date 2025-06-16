@@ -205,27 +205,50 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
-        /* Testimonial specific styles - White text on subtle dark background */
-        .testimonial-item {
-            background-color: #1a2a3a; /* Darker background for testimonials */
-            border-left: 5px solid #007bff; /* Bright blue border */
+        /* Testimonials Section Styles - Designed for potential carousel */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2-3 columns on wider screens */
+            gap: 2em; /* Spacing between testimonial cards */
+            margin-top: 2em;
+        }
+
+        .testimonial-card {
+            background-color: #1a2a3a; /* Darker background for testimonial cards */
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             padding: 1.5em;
-            margin-bottom: 1.5em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between; /* Space content vertically */
+            min-height: 250px; /* Ensure cards have some minimum height for consistency */
+        }
+
+        .testimonial-card img {
+            width: 80px; /* Size for client photo */
+            height: 80px;
+            border-radius: 50%; /* Circular image */
+            object-fit: cover;
+            border: 3px solid #007bff; /* Bright blue border around photo */
+            margin-bottom: 1em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .testimonial-card .testimonial-text {
             font-style: italic;
             color: #E0E0E0; /* Light grey text */
-            box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-            border-radius: 4px;
+            margin-bottom: 1em;
+            flex-grow: 1; /* Allow text to grow and take available space */
         }
-        .testimonial-item p {
-            margin: 0 0 0.5em 0;
-        }
-        .testimonial-author {
+
+        .testimonial-card .testimonial-author {
             font-weight: 600;
             font-style: normal;
             color: #FFFFFF; /* White author name */
-            text-align: right;
-            margin-top: 0.5em;
             display: block;
+            margin-top: 0.5em;
         }
 
         /* Form Labels & Inputs - Light text, light borders */
@@ -310,8 +333,8 @@
                 margin-left: 0.5em;
                 font-size: 0.8em;
             }
-            .gallery {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            .gallery, .testimonials-grid { /* Apply to both grids */
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Slightly smaller min-width */
             }
         }
 
@@ -327,6 +350,9 @@
             .main-button {
                 padding: 10px 20px;
                 font-size: 1em;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr; /* Stack testimonials on very small screens */
             }
         }
     </style>
@@ -440,20 +466,29 @@
 
     <div class="container" id="testimonials">
         <h2 class="section-heading-left">What Our Clients Say</h2>
-        <div class="testimonial-item">
-            <p>"Supreet captured our family's holiday photos beautifully! The process was smooth, and the results were stunning. Highly recommend Flicks_Focused!"</p>
-            <span class="testimonial-author">- Happy Client, Melissa TX</span>
-        </div>
-        <div class="testimonial-item">
-            <p>"We needed some quick headshots for our school club, and Supreet delivered professional quality in record time. Plus, it supports a great cause!"</p>
-            <span class="testimonial-author">- Local School Club</span>
-        </div>
-        <div class="testimonial-item">
-            <p>"Amazing talent and a truly dedicated approach. Flicks_Focused provided incredible photos for our community event, capturing all the key moments perfectly."</p>
-            <span class="testimonial-author">- Community Organizer</span>
+        <p style="text-align: center; margin-bottom: 2em; color: #ADD8E6;">Read what our satisfied clients have to say about Flicks_Focused!</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <img src="images/client1.jpg" alt="Happy Client Photo 1">
+                <p class="testimonial-text">"Supreet captured our family's holiday photos beautifully! The process was smooth, and the results were stunning. Highly recommend Flicks_Focused!"</p>
+                <span class="testimonial-author">- Happy Client, Melissa TX</span>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="images/client2.jpg" alt="Local School Client Photo">
+                <p class="testimonial-text">"We needed some quick headshots for our school club, and Supreet delivered professional quality in record time. Plus, it supports a great cause!"</p>
+                <span class="testimonial-author">- Local School Club</span>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="images/client3.jpg" alt="Community Organizer Photo">
+                <p class="testimonial-text">"Amazing talent and a truly dedicated approach. Flicks_Focused provided incredible photos for our community event, capturing all the key moments perfectly."</p>
+                <span class="testimonial-author">- Community Organizer</span>
+            </div>
         </div>
         <p style="text-align: center; margin-top: 2em; font-style: italic; color: #ADD8E6;">
-            (These are placeholder testimonials. Remember to replace them with real client feedback!)
+            (These are placeholder testimonials. Remember to replace them with real client feedback and photos!)
         </p>
     </div>
 
